@@ -3,6 +3,7 @@
   const PROBLEMAS = window.PROBLEMAS || [];
   const lista = document.getElementById("lista");
   const plantilla = document.getElementById("plantilla");
+  const filtros = document.getElementById("filtros");
 
   // estado por problema: id -> { [persona]: "caballero" | "bribon" | null }
   const estado = {};
@@ -11,7 +12,7 @@
     p.personajes.forEach((pers) => (estado[p.id][pers] = null));
   });
 
-  const ORDEN_NIVELES = ["introductorio", "sencillo", "intermedio"];
+  let nivelActivo = "introductorio";
 
   function nivelEtq(n) {
     return { introductorio: "Introductorio", sencillo: "Sencillo", intermedio: "Intermedio" }[n] || n;
@@ -172,24 +173,23 @@
 
   function render() {
     lista.innerHTML = "";
-    // Agrupar problemas por nivel, en orden fijo, con cabecera de sección.
-    ORDEN_NIVELES.forEach((nivel) => {
-      const grupo = PROBLEMAS.filter((p) => p.nivel === nivel);
-      if (grupo.length === 0) return;
-
-      const seccion = document.createElement("section");
-      seccion.className = "seccion-nivel";
-      seccion.dataset.nivel = nivel;
-
-      const cab = document.createElement("h2");
-      cab.className = "cab-nivel";
-      cab.textContent = nivelEtq(nivel);
-      seccion.appendChild(cab);
-
-      grupo.forEach((p) => seccion.appendChild(renderProblema(p)));
-      lista.appendChild(seccion);
-    });
+    const visibles = PROBLEMAS.filter((p) => p.nivel === nivelActivo);
+    if (visibles.length === 0) {
+      lista.textContent = "No hay problemas en este nivel.";
+      return;
+    }
+    visibles.forEach((p) => lista.appendChild(renderProblema(p)));
   }
+
+  // Filtros por nivel
+  filtros.addEventListener("click", (e) => {
+    const btn = e.target.closest(".chip");
+    if (!btn) return;
+    filtros.querySelectorAll(".chip").forEach((c) => c.classList.remove("activo"));
+    btn.classList.add("activo");
+    nivelActivo = btn.dataset.nivel;
+    render();
+  });
 
   render();
 })();
