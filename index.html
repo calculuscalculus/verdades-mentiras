@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acertijos de Caballeros y Bribones</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Verdades y Mentiras</h1>
+    <p class="sub">
+      Acertijos de caballeros (siempre dicen la verdad) y bribones (siempre mienten).
+      Razona, marca tu respuesta y comprueba si aciertas.
+    </p>
+  </header>
+
+  <nav class="filtros" id="filtros" aria-label="Filtrar por nivel">
+    <button class="chip activo" data-nivel="todos">Todos</button>
+    <button class="chip" data-nivel="introductorio">Introductorio</button>
+    <button class="chip" data-nivel="basico">Básico</button>
+    <button class="chip" data-nivel="intermedio">Intermedio</button>
+  </nav>
+
+  <main id="lista" class="lista" aria-live="polite"></main>
+
+  <footer class="pie">
+    <p>
+      Generado para fines didácticos &middot; Las soluciones están verificadas
+      por fuerza bruta. Página estática, sin servidor.
+    </p>
+  </footer>
+
+  <template id="plantilla">
+    <article class="problema">
+      <div class="cabecera">
+        <span class="nivel"></span>
+        <h2 class="titulo"></h2>
+      </div>
+      <p class="enunciado"></p>
+      <div class="declaraciones"></div>
+      <div class="controles"></div>
+      <div class="resultado"></div>
+      <details class="explicacion">
+        <summary>Ver explicación</summary>
+        <p></p>
+      </details>
+    </article>
+  </template>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
