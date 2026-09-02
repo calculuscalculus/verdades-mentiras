@@ -12,9 +12,9 @@ y resolverlos.
 | 1 | Introductorio | Una declaración verdadera | A | 1 |
 | 2 | Introductorio | Una declaración falsa | B | 1 |
 | 3 | Introductorio | Ecos mutuos | A, B | 2 |
-| 4 | Básico | El mismo tipo | A, B | 1 |
-| 5 | Básico | El acuso a mi vecino | A, B | 1 |
-| 6 | Básico | Tres sospechosos | A, B, C | 2 |
+| 4 | Sencillo | El mismo tipo | A, B | 1 |
+| 5 | Sencillo | El acuso a mi vecino | A, B | 1 |
+| 6 | Sencillo | Tres sospechosos | A, B, C | 2 |
 | 7 | Intermedio | Nadie igual a nadie | A, B, C | 1 |
 | 8 | Intermedio | El tribunal | A, B, C | 1 |
 | 9 | Intermedio | La cadena | A, B, C, D | 2 |

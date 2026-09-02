@@ -69,7 +69,7 @@ const PROBLEMAS = [
   // ===================== NIVEL BÁSICO =====================
   {
     id: 4,
-    nivel: "basico",
+    nivel: "sencillo",
     titulo: "El mismo tipo",
     enunciado:
       "A dice: «B es caballero». B dice: «A y yo somos del mismo tipo». " +
@@ -92,7 +92,7 @@ const PROBLEMAS = [
   },
   {
     id: 5,
-    nivel: "basico",
+    nivel: "sencillo",
     titulo: "El acuso a mi vecino",
     enunciado:
       "A dice: «B es bribón». B dice: «A y yo somos del mismo tipo». " +
@@ -114,7 +114,7 @@ const PROBLEMAS = [
   },
   {
     id: 6,
-    nivel: "basico",
+    nivel: "sencillo",
     titulo: "Tres sospechosos",
     enunciado:
       "A dice: «B es bribón». B dice: «A es bribón». C dice: «A es caballero». " +

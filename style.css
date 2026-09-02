@@ -41,32 +41,31 @@ body {
   font-size: 0.95rem;
 }
 
-.filtros {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 1rem;
-  background: var(--panel);
-  border-bottom: 1px solid var(--borde);
+.seccion-nivel {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 0.5rem;
 }
-.chip {
-  border: 1px solid var(--borde);
-  background: var(--bg);
-  color: var(--txt-dim);
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.88rem;
-  transition: all 0.12s;
+.cab-nivel {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--borde);
 }
-.chip:hover { color: var(--txt); border-color: var(--txt-dim); }
-.chip.activo {
-  background: var(--txt);
-  color: #fff;
-  border-color: var(--txt);
+.cab-nivel::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.6rem;
+  border-radius: 50%;
+  vertical-align: middle;
+  background: var(--txt-dim);
 }
+.seccion-nivel[data-nivel="introductorio"] .cab-nivel::before { background: var(--intro); }
+.seccion-nivel[data-nivel="sencillo"]      .cab-nivel::before { background: var(--bas); }
+.seccion-nivel[data-nivel="intermedio"]    .cab-nivel::before { background: var(--inter); }
 
 .lista {
   max-width: 740px;
@@ -101,7 +100,7 @@ body {
   white-space: nowrap;
 }
 .nivel[data-n="introductorio"] { background: var(--intro); }
-.nivel[data-n="basico"]        { background: var(--bas); }
+.nivel[data-n="sencillo"]       { background: var(--bas); }
 .nivel[data-n="intermedio"]    { background: var(--inter); }
 
 .titulo {
